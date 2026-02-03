@@ -102,35 +102,7 @@ while True:
     <button onclick="alert('Sahi jawab! Guido van Rossum ne.')" style="padding: 10px; cursor: pointer;">Guido van Rossum</button>
     <button onclick="alert('Galat jawab, sahi jawab Guido van Rossum hai.')" style="padding: 10px; cursor: pointer;">Mark Zuckerberg</button>
     </section>
-    <button onclick="document.body.style.backgroundColor='#333'; document.body.style.color='white';" style="float: right; padding: 5px;">Dark Mode</button>
-<button onclick="document.body.style.backgroundColor='white'; document.body.style.color='black';" style="float: right; padding: 5px; margin-right: 5px;">Light Mode</button>
-    <section id="compiler" style="background: #2d2d2d; color: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
-    <h2 style="color: #4CAF50;">Real Python Compiler</h2>
-    <textarea id="yourcode" style="width: 100%; height: 120px; font-family: monospace; background: #1e1e1e; color: #9cdcfe; border: 1px solid #444; padding: 10px;">print("Hello!")
-# Yahan apna code likhein aur Run dabayein</textarea>
-    
-    <button onclick="runPython()" style="margin-top: 10px; background: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 5px;">Run Code ▶</button>
-    
-    <div style="margin-top: 15px;">
-        <strong>Output:</strong>
-        <pre id="output" style="background: black; color: lightgreen; padding: 10px; border: 1px solid #555; min-height: 50px; white-space: pre-wrap;"></pre>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdout.min.js"></script>
-    
-    <script>
-    function runPython() {
-        var prog = document.getElementById("yourcode").value;
-        var output = document.getElementById("output");
-        output.innerHTML = "";
-        Sk.configure({output: (text) => output.innerHTML += text});
-        Sk.misieval.asyncToPromise(() => Sk.importMainWithBody("<stdin>", false, prog, true))
-            .catch((err) => output.innerHTML = "Error: " + err.toString());
-    }
-    </script>
-    </section>
-    
     
 
     <footer>
